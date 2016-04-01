@@ -11,6 +11,7 @@
   },
   "devDependencies": {},
   "scripts": {
+    "start": "devd . -A 127.0.0.1 -p 3000 & gulp sass:watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
