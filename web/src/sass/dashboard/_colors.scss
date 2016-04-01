@@ -1,0 +1,16 @@
+@mixin negative {
+  .positive {
+    color: #6FB17B;
+  }
+}
+
+@mixin positive {
+  .negative {
+    color: rgb(225, 77, 87);
+  }
+}
+
+@mixin colors {
+  @include positive;
+  @include negative;
+}

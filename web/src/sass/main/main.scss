@@ -1,0 +1,40 @@
+/**
+ * Main CSS
+ **/
+
+body {
+  background-color: #2c3e50;
+}
+
+body > .grid {
+  height: 100%;
+}
+.image {
+  margin-top: -100px;
+}
+.column {
+  max-width: 450px;
+}
+
+.login-header {
+  padding: 25px 0px 25px 0px;
+  font-size: 35px;
+  font-weight: 400;
+  font-family: "Lato", helvetica;
+}
+
+.logo {
+  position:fixed;
+  top:0;
+  left:0;
+
+  .name {
+    position:relative;
+    padding:10px;
+    color: #FFFFFF;
+
+    font-size:25px;
+    font-weight: 700;
+    font-family: "Lato", sans-serif;
+  }
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Dashboard</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+
+    <!-- Semantic / Highcharts Theme -->
+    <script type="text/javascript" src="src/js/highcharts-theme.js"></script>
+    <script type="text/javascript" src="semantic/dist/semantic.min.js"></script>
+    <Script type="text/javascript" src="http://momentjs.com/downloads/moment.min.js"></script>
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:700,400,300' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/dashboard/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/dashboard/dash.css" />
+  </head>
+  <body>
+    <div class="ui logo">
+      <h1 class="name">rdelro</h1>
+    </div>
+
+    <div class="ui equal width grid dash">
+      <div class="row">
+        <div class="column dc-mid">
+          <div class="ui segment dcontainer">
+            <h1 class="ui header">
+              Server
+            </h1>
+
+            <div class="db">
+              <div class="data-container">
+                <h1 class="header">
+                  Availability
+                </h1>
+
+                <div class="values">
+                  <div class="value">
+                    <p>90%</p>
+                    <label>uptime percentage</label>
+                  </div>
+                  <div class="change">
+                    <p class='negative'>-5%</p>
+                    <label>vs previous week</label>
+                  </div>
+                </div>
+
+                <h1 class="header">
+                  Net Uptime
+                </h1>
+
+                <div class="values">
+                  <div class="value">
+                    <p>95%</p>
+                    <label>uptime percentage</label>
+                  </div>
+                  <div class="change">
+                    <p class='positive'>+5%</p>
+                    <label>vs previous week</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column dc-small">
+          <div class="ui segment dcontainer">
+            <h1 class="ui header">
+              Players
+            </h1>
+
+            <div class="db d-single">
+              <div class="data-container">
+                <div class="values">
+                  <div class="value">
+                    <p>10</p>
+                    <label>connected</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column dc-long">
+          <div class="ui segment dcontainer">
+            <h1 class="ui header">
+              Server (past two months)
+            </h1>
+
+            <div class="db">
+              <div class='graph' id="container"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui credits">
+      <p class="credit">
+        Designed by <a href="https://jaredallard.me">Jared Allard</a>
+      </p>
+    </div>
+
+    <script type="text/babel">
+      $(function () {
+          $('#container').highcharts({
+            chart: {
+              zoomType: 'x'
+            },
+            title: {
+              text: ''
+            },
+            xAxis: {
+              type: 'datetime'
+            },
+            yAxis: {
+              title: {
+                text: ''
+              },
+              min: 0,
+              max: 100
+            },
+            legend: {
+              enabled: false
+            },
+            plotOptions: {
+              area: {
+                fillColor: '#323E50',
+                color: '#5290E9',
+                marker: {
+                  radius: 2
+                },
+                lineWidth: 2,
+                states: {
+                  hover: {
+                    lineWidth: 3
+                  }
+                },
+                threshold: null
+              }
+            },
+            series: [{
+              type: 'area',
+              name: ' Uptime',
+              unit: '%',
+              data: [
+                [+moment.utc('03-30-2016', 'MM-DD-YYYY'), 100],
+                [+moment.utc('03-31-2016', 'MM-DD-YYYY'), 100],
+                [+moment.utc('04-01-2016', 'MM-DD-YYYY'), 100],
+                [+moment.utc('04-02-2016', 'MM-DD-YYYY'), 60],
+                [+moment.utc('04-03-2016', 'MM-DD-YYYY'), 94],
+                [+moment.utc('04-04-2016', 'MM-DD-YYYY'), 96],
+                [+moment.utc('04-05-2016', 'MM-DD-YYYY'), 100],
+                [+moment.utc('04-06-2016', 'MM-DD-YYYY'), 98],
+                [+moment.utc('04-07-2016', 'MM-DD-YYYY'), 100]
+              ]
+            }],
+            credits: {
+              enabled: false
+            }
+          });
+      });
+    </script>
+  </body>
+</html>

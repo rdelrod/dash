@@ -1,0 +1,119 @@
+// colors
+
+@import 'colors';
+
+svg {
+  display:block !important;
+}
+
+.dcontainer {
+  height:100% !important;
+  font-family: 'Lato', sans-serif;
+  background-color: rgb(42, 42, 42) !important;
+  color: #FFFFFF;
+
+  border-radius: 0 !important;
+
+  .header {
+    font-size: 1.2em !important; // override semantic
+    font-weight: 400 !important;
+    color: #FFFFFF;
+  }
+}
+
+.dc {
+
+}
+
+.dc-mid {
+  @extend .dc;
+  max-width: 35%;
+  height:auto !important;
+}
+
+.dc-small {
+  @extend .dc;
+  max-width:15%;
+  height: auto !important;
+}
+
+.dc-long {
+  @extend .dc;
+  max-width:70%;
+  height: 300px !important;
+}
+
+// Dashboard Body
+.db {
+  padding:10px;
+
+  .header {
+    font-size: 2em !important;
+    color: #cdcdcd;
+    border-bottom: 1px solid #444444;;
+  }
+
+  .graph {
+    height:calc(100% - 70px);
+    width:calc(100% - 50px);
+    position:absolute;
+
+  }
+
+  .values {
+    position:relative;
+    height:70px;
+    font-size: 2em;
+    color: #cdcdcd;
+
+    margin-top:10px;
+
+    p {
+      margin:0 !important;
+    }
+
+    .value {
+      position:absolute;
+      left:0;
+
+      label {
+        font-size:0.5em;
+      }
+    }
+
+    .change {
+      position: absolute;
+      @include colors;
+
+      right:0;
+
+      label {
+        font-size:0.5em;
+      }
+
+      p {
+        text-align:right;
+      }
+    }
+  }
+
+  .data-container {
+    width:100%;
+  }
+}
+
+.d-single {
+  .values {
+    width:100%;
+
+    .value {
+      position: static;
+      text-align: center;
+
+      p {
+        color: #FFFFFF;
+        font-size: 2em;
+      }
+    }
+  }
+}

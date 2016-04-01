@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Dashboard</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:700,400,300' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/main/main.css" />
+  </head>
+  <body>
+    <div class="ui middle logo">
+      <h1 class="name">rdelro</h1>
+    </div>
+
+    <div class="ui middle aligned center aligned grid">
+      <div class="column">
+        <form class="ui large form">
+          <div class="ui stacked segment">
+            <h1 class="ui black">
+              <div class="content login-header">
+                Log In
+              </div>
+            </h1>
+
+            <div class="field">
+              <div class="ui left icon input">
+                <i class="user icon"></i>
+                <input type="text" name="discord" placeholder="Discord Username">
+              </div>
+            </div>
+            <div class="ui fluid large green submit button">Log In</div>
+          </div>
+        </form>
+
+        <div class="ui message">
+         &copy; 2016
+         <br />
+         <a href="https://jaredallard.me" />Jared Allard</a>
+       </div>
+      </div>
+    </div>
+
+    <script src="src/js/semantic-apis.js"></script>
+    <script>
+      $(document)
+        .ready(function() {
+          $('.ui.form')
+            .form({
+              fields: {
+                email: {
+                  identifier  : 'discord',
+                  rules: [
+                    {
+                      type   : 'empty',
+                      prompt : 'Please enter your discord username'
+                    }
+                  ]
+                }
+              }
+            })
+            .api({
+              action: 'request access',
+              beforeSend: function(settings) {
+                settings.urlData = {
+                  username: $form = $('.ui.form').form('get value', 'discord')
+                };
+                return settings;
+              },
+              onSuccess: function(response) {
+
+              },
+              onFailure: function(response) {
+
+              }
+            })
+        });
+    </script>
+  </body>
+</html>

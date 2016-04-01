@@ -1,0 +1,28 @@
+{
+  "name": "dash",
+  "authors": [
+    "Jared Allard <jaredallard@outlook.com>"
+  ],
+  "description": "A Dashboard for mc-api",
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "dashboard",
+    "minecraft"
+  ],
+  "license": "MIT",
+  "homepage": "https://jaredallard.me",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "^0.14.7"
+  }
+}

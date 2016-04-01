@@ -1,0 +1,51 @@
+/**
+ * Dashboard Main CSS
+ **/
+
+html,
+body {
+  background-color: rgb(27, 28, 31);
+}
+
+.logo {
+  position:fixed;
+  top:0;
+  left:0;
+
+  .name {
+    position:relative;
+    padding:10px;
+    color: #cdcdcd;
+
+    font-size:25px;
+    font-weight: 700;
+    font-family: "Lato", sans-serif;
+  }
+}
+
+.credits {
+  position:fixed;
+  bottom:0;
+  right:0;
+
+  .credit {
+    position:relative;
+    padding:10px;
+    color: #cdcdcd;
+
+    font-size:0.7em;
+    font-weight: 700;
+    font-family: "Lato", sans-serif;
+  }
+}
+
+.dash {
+  $plsep: 20px;
+  padding-top:100px !important;
+  padding-left:$plsep !important;
+  padding-right:$plsep !important;
+}
+
+.row {
+  height:auto !important;
+}
