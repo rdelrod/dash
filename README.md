@@ -13,7 +13,7 @@ make
 ```bash
 pushd web
 npm install
-npm install -g gulp-cli
+npm install -g gulp-cli bower
 
 pushd semantic
 gulp build
