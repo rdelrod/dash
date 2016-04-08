@@ -2,9 +2,6 @@
 
 @import 'colors';
 
-svg {
-  display:block !important;
-}
 
 .dcontainer {
   height:100% !important;
@@ -35,6 +32,10 @@ svg {
   @extend .dc;
   max-width:15%;
   height: auto !important;
+
+  .header {
+    margin-bottom:0px !important;
+  }
 }
 
 .dc-long {
@@ -47,6 +48,9 @@ svg {
 .db {
   padding:10px;
 
+  max-height: 100% !important;
+  max-width: 100% !important;
+
   .header {
     font-size: 2em !important;
     color: #cdcdcd;
@@ -57,7 +61,6 @@ svg {
     height:calc(100% - 70px);
     width:calc(100% - 50px);
     position:absolute;
-
   }
 
   .values {
@@ -105,8 +108,11 @@ svg {
 .d-single {
   .values {
     width:100%;
+    margin-top:0px !important;
+    margin-bottom:28px !important;
 
     .value {
+      margin-top:0px;
       position: static;
       text-align: center;
 
